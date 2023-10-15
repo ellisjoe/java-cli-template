@@ -1,9 +1,12 @@
 plugins {
     id 'application'
+    id 'org.graalvm.buildtools.native' version '0.9.27'
 }
 
 dependencies {
     implementation 'info.picocli:picocli:'
+
+    annotationProcessor 'info.picocli:picocli-codegen'
 
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
@@ -16,7 +19,15 @@ java {
 }
 
 application {
-    mainClass = 'com.ellisjoe.cli.App'
+    mainClass = 'com.ellisjoe.cli.Cli'
+}
+
+graalvmNative {
+    binaries {
+        main {
+            imageName = 'hello-world-cli'
+        }
+    }
 }
 
 tasks.named('test') {
