@@ -1,4 +1,5 @@
 # Run ./gradlew --write-locks to regenerate this file
+info.picocli:picocli:4.7.5 (1 constraints: 12051936)
 
 [Test dependencies]
 org.junit:junit-bom:5.9.3 (7 constraints: ae74fda0)
